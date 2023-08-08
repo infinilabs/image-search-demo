@@ -1,0 +1,7 @@
+<!-- templates/search_results.html -->
+
+<h1>Search Results</h1>
+{% for result in results %}
+<img class="searchImage" src="/static/img/{{ result._source.title }}"></img>
+<p>分数:{{result._score}}</p>
+{% endfor %}
