@@ -95,7 +95,7 @@ def search_service():
         return jsonify({"error": "Error processing image."}), 400
 
     query_body = {
-        "size": 10,
+        "size": 50,
         "_source": "title",
         "query": {
             "bool": {
@@ -122,6 +122,7 @@ def search_service():
 
     # 使用模板显示搜索结果
     results = response["hits"]["hits"]
+    print([r["_source"]["title"] for r in results], len(results))
     return render_template("search.html", results=results)
 
 
