@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template
 from elasticsearch import Elasticsearch
-
 from img_vector import convert_rgba_to_rgb2, vectorization
 
 app = Flask(__name__)
@@ -8,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/search", methods=["POST"])
 def search_service():
-    es = Elasticsearch("http://192.168.3.17:9200")
+    es = Elasticsearch("http://localhost:9200")
 
     # 获取表单数据
     index_name = request.form.get("index_name")  # 索引名
@@ -56,19 +55,14 @@ def search_service():
     # print(response["hits"]["hits"])
     results = response["hits"]["hits"]
     print(results)
-    return render_template("search_results.html", results=results)
+    return render_template("search.html", results=results)
 
     # return jsonify(response)  # 返回搜索结果
 
 
-@app.route("/req", methods=["GET"])
-def req_page():
-    return render_template("req.html")
-
-
 @app.route("/", methods=["GET"])
 def home():
-    return render_template("req.html")
+    return render_template("home.html")
 
 
 if __name__ == "__main__":
