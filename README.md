@@ -30,6 +30,12 @@ Start the server:
 ES_SERVER=http://localhost:9200 python main.py
 ```
 
+if you are in Windows:
+
+```powershell
+$env:ES_SERVER="http://localhost:9200"; python main.py
+```
+
 ## ⚖️ License
 
 Licensed under either of
