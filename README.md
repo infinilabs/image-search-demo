@@ -1,4 +1,4 @@
-# kNN demo
+# Image Search Demo
 
 A handy example shows you how to search for vectors using the
 [kNN plugin](https://www.infinilabs.com/docs/latest/easysearch/references/search/knn_api/) of
