@@ -10,7 +10,7 @@
       }
       body {
         font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
+        background-color: #f9f8f8;
         margin: 0;
         padding: 20px;
       }
@@ -106,23 +106,24 @@
       }
 
       .waterfall-container {
-        column-count: 3; /* Adjust the number of columns as needed */
-        column-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       .waterfall-item {
         display: inline-block;
-        width: 100%;
-        padding: 10px;
         border-radius: 5px;
         box-shadow: none;
         margin-bottom: 20px;
         text-align: center;
+        width: 25%; /* 每行显示 4 个搜索结果，可以根据需要进行调整 */
+        padding: 10px;
+        box-sizing: border-box;
       }
 
       .waterfall-item img {
         max-width: 100%;
-        height: auto;
+        max-height: 250px;
         border-radius: 5px;
       }
 
